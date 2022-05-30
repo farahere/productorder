@@ -1,5 +1,5 @@
 type Query {
-  # order: [order]
+  order: [Order]
   orderdetail: [orderdetail]
   product: [product]
 }
@@ -8,12 +8,13 @@ type Mutation {
   createProduct(name: String, stock: Int, price: Int, created: String): product
   updateProduct(id: Int, name: String, stock: Int, price: Int, created: String): product
   deleteProduct(id: Int): product
-  GetDetailOrder(id: Int): order
-  createOrder(transcode: String, created: String): order
-  updateOrder(id: Int, transcode: String, created: String): order
-  deleteOrder(id: Int): order
+
+  getDetailOrder(id: Int): Order
+  createOrder(transcode: String, created: String): Order
+  updateOrder(id: Int, transcode: String, created: String): Order
+  deleteOrder(id: Int): Order
 }
-type order {
+type Order {
   id: Int
   transcode: String
   created: String
